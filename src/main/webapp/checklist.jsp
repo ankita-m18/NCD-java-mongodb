@@ -119,15 +119,15 @@
 			</tr>
 
 		</table>
-		<h2>
+		<h3>
 			A score above 4 indicates that the person may be at higher risk of
 			NCDs and needs to be prioritized for attending screening for
 			following NCDs and then confirmed if there is any of them.<br>
-			1.Diabetes<br> 2.Hypertension<br> 3.Breast Cancer<br>
-			4.Cervical Cancer<br> 5.Oral Cancer<br> For those who are
+			<h4>1.Diabetes<br> 2.Hypertension<br> 3.Breast Cancer<br>
+			4.Cervical Cancer<br> 5.Oral Cancer</h4><br> For those who are
 			curious - more about NCD - <a
 				href=https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases>https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases</a>
-		</h2>
+		</h3>
 	</form>
 
 
