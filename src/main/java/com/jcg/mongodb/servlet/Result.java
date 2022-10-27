@@ -83,6 +83,7 @@ public class Result extends HttpServlet {
 			    	BasicDBObject searchQuery = new BasicDBObject("Aadhaar UID",Registration.aadhaar);
 			    	
 			    	BasicDBObject updateFields = new BasicDBObject();
+				updateFields.append("Age", age);
 			    	updateFields.append("Smoke", smoke);
 			    	updateFields.append("Alcohol", alcohol);
 			    	updateFields.append("Waist", waist);
@@ -96,7 +97,8 @@ public class Result extends HttpServlet {
 			    	
 			    	
 			    	/*collection.updateMany(Filters.eq("Aadhaar UID",Registration.aadhaar), Updates.combine(
-			    	        Updates.set("Smoke", smoke),
+			    	        Updates.set("Age", age),
+					Updates.set("Smoke", smoke),
 			    	        Updates.set("Alcohol", alcohol),
 			    	        Updates.set("Waist", waist),
 			    	        Updates.set("Physical Activity", phy_act),
