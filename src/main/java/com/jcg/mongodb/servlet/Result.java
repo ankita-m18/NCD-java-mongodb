@@ -95,10 +95,6 @@ public class Result extends HttpServlet {
 			    	collection.updateMany(searchQuery, setQuery);
 			    	
 			    	
-			    	
-			    	
-			    	
-			    	
 			    	/*collection.updateMany(Filters.eq("Aadhaar UID",Registration.aadhaar), Updates.combine(
 			    	        Updates.set("Smoke", smoke),
 			    	        Updates.set("Alcohol", alcohol),
@@ -177,7 +173,7 @@ public class Result extends HttpServlet {
 				out.println("The person may be at higher risk of NCDs and needs to be prioritized for"
 						+ "attending screening.");
 			if (total < 4)
-				out.println("The person is not at risk of NCDs and doesn't need screening.");
+				out.println("<br>The person is not at risk of NCDs and doesn't need screening.");
 
 			out.println("</h2><br><br><button onclick=location.href='checklist.jsp'; align=center>Previous</button>");
 			out.println(
