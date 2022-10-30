@@ -16,8 +16,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoException;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Filters;
-import com.mongodb.client.model.Updates;
+//import com.mongodb.client.model.Filters;
+//import com.mongodb.client.model.Updates;
 
 @WebServlet("/resultServlet")
 public class Result extends HttpServlet {
@@ -62,7 +62,7 @@ public class Result extends HttpServlet {
 		    try (MongoClient mongo = new MongoClient( "localhost" , 27017 ))
 		    {
 		    	// Accessing the database 
-			    MongoDatabase database = mongo.getDatabase("NcdDb"); 
+			    MongoDatabase database = mongo.getDatabase("ncdjava"); 
 			    
 			    
 			    try
@@ -83,13 +83,7 @@ public class Result extends HttpServlet {
 			    	BasicDBObject searchQuery = new BasicDBObject("Aadhaar UID",Registration.aadhaar);
 			    	
 			    	BasicDBObject updateFields = new BasicDBObject();
-				updateFields.append("Age", age);
-			    	updateFields.append("Smoke", smoke);
-			    	updateFields.append("Alcohol", alcohol);
-			    	updateFields.append("Waist", waist);
-			    	updateFields.append("Physical Activity", phy_act);
-			    	updateFields.append("Family History", fam_his);
-			    	updateFields.append("Total Score", total);
+			    	updateFields.append("Score", total);
 			    	updateFields.append("Screening", screening);
 			    	BasicDBObject setQuery = new BasicDBObject();
 			    	setQuery.append("$set", updateFields);
@@ -98,7 +92,7 @@ public class Result extends HttpServlet {
 			    	
 			    	/*collection.updateMany(Filters.eq("Aadhaar UID",Registration.aadhaar), Updates.combine(
 			    	        Updates.set("Age", age),
-					Updates.set("Smoke", smoke),
+			    	        Updates.set("Smoke", smoke),
 			    	        Updates.set("Alcohol", alcohol),
 			    	        Updates.set("Waist", waist),
 			    	        Updates.set("Physical Activity", phy_act),
@@ -133,33 +127,32 @@ public class Result extends HttpServlet {
 
 			out.println("<tr>");
 			out.println("<td>1. What is your age? (in complete years)</td>");
-			out.println("<td>" + age + "</td> ");
+			out.println("<td style=text-align:center>" + age + "</td> ");
 			out.println("</tr>");
 
 			out.println("<tr>");
 			out.println("<td>2. Do you smoke or Consume smokeless product like Gutka or Khaini?</td>");
-			out.println("<td>" + smoke + "</td>");
+			out.println("<td style=text-align:center>" + smoke + "</td>");
 			out.println("</tr>");
 
 			out.println("<tr>");
 			out.println("<td>3. Do you consume alcohol daily?</td>");
-			out.println("<td>" + alcohol + "</td>");
+			out.println("<td style=text-align:center>" + alcohol + "</td>");
 			out.println("</tr>");
 
 			out.println("<tr>");
 			out.println("<td>4. Measurement of waist in (cm)</td>");
-			out.println("<td>" + waist + "</td>");
+			out.println("<td style=text-align:center>" + waist + "</td>");
 			out.println("</tr>");
 
 			out.println("<tr>");
 			out.println("<td>5. Do you undertake any physical activities for a minimum of 150 minutes a week?</td>");
-			out.println("<td>" + phy_act + "</td>");
+			out.println("<td style=text-align:center>" + phy_act + "</td>");
 			out.println("</tr>");
 
 			out.println("<tr>");
-			out.println(
-					"<td>6. Do you have a family history (any one of your parents or siblings) of high blood pressure, diabetes and heart disease?</td>");
-			out.println("<td>" + fam_his + "</td>");
+			out.println("<td>6. Do you have a family history (any one of your parents or siblings) of high blood pressure, diabetes and heart disease?</td>");
+			out.println("<td style=text-align:center>" + fam_his + "</td>");
 			out.println("</tr>");
 
 			out.println("<tr style=text-align:center>");
