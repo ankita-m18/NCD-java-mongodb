@@ -5,6 +5,7 @@
 <title>NCD Risk Assessment Checklist</title>
 </head>
 <body>
+	<h1>Patient Id : ${pid}</h1>
 	<form name="NCD" method="post" action="resultServlet">
 		<table align="center" border="1">
 			<tr>
