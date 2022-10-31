@@ -95,7 +95,7 @@ public class Registration extends HttpServlet {
 		    		     id = Long.toString(random_int);
 		    			
 		    			//id = String.valueOf(Math.random() * 1000000000000000L);
-		    			if(id!=document.get("_id"))
+		    			if(id!=document.get("Patient id"))
 		    			{
 		    				 Document doc = new Document("Patient id", id)
 		    			    			.append("First Name", firstname)
